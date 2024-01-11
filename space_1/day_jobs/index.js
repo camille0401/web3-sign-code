@@ -15,7 +15,7 @@ const jobConfig = {
      * 
      * 注意 ：只能选用一种
      */
-    driver: 2,
+    driver: 3,
     count: 6,//每次打开多少个窗口
     gooleConfig: [
         {
@@ -120,22 +120,6 @@ const jobConfig = {
     ]
 }
 
-// 设置Chrome浏览器选项，使用已登录的谷歌账号
-// const driver = new GooleBrowserUtil("C:/Users/root/AppData/Local/Google/Chrome/User Data","Profile 2").initDriver();
-
-// const wallet = new MateMask(driver);
-// async function work(){
-//     //打开窗口
-//     let driver = new GooleBrowserUtil(e.datapath,e.profile).initDriver();
-//     //循环执行每日job,单线程工作（暂时只支持一个窗口工作）
-//     for (var prop in dayJobs) {
-//         if (dayJobs.hasOwnProperty(prop)) {
-//             console.log(prop.name);
-//             prop.work(driver);
-//         }
-//     }
-
-// }
 
 async function dowork() {
 

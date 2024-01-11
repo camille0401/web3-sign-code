@@ -16,17 +16,17 @@ class okxWallat {
             let pwd_input = await tool.reFindElement(this.driver, { type: 'xpath', content: '//input[contains(@class,"okui-input-input")]' });
             if (pwd_input) {
                 await tool.oper(pwd_input, "input", pwd);
-                await this.driver.sleep(1000);
+                await this.driver.sleep(2000);
                 //定位登录按钮
                 let login_button = await tool.reFindElement(this.driver, { type: 'xpath', content: '//button[contains(@class,"okui-btn btn-xl btn-fill-highlight block mobile")]' });
                 if (login_button) {
                     await tool.oper(login_button, "click");
-                    await this.driver.sleep(1000);
+                    await this.driver.sleep(2000);
                     //确认连接账户
                     let confirm_button = await tool.reFindElement(this.driver, { type: 'xpath', content: '//button[contains(@class,"okui-btn btn-lg btn-fill-highlight mobile _action-button_1ntoe_1")]' });
                     if (confirm_button) {
                         await tool.oper(confirm_button, "click");
-                        await this.driver.sleep(1000);
+                        await this.driver.sleep(2000);
                     }
                 }
             }

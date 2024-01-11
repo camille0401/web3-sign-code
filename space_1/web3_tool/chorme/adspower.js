@@ -4,14 +4,16 @@ const request = require('request-promise-native');
 
 class AdsBrowserUtil {
   constructor(ads_id) {
-    this.open_url = `http://127.0.0.1:50325/api/v1/browser/start?user_id=${ads_id}`;
-    this.close_url = `http://127.0.0.1:50325/api/v1/browser/stop?user_id=${ads_id}`;
+    this.open_url = `http://local.adspower.net:50325/api/v1/browser/start?user_id=${ads_id}`;
+    this.close_url = `http://local.adspower.net:50325/api/v1/browser/stop?user_id=${ads_id}`;
     this.chrome_options = new chrome.Options();
   }
 
   async initDriver() {
     try {
+        console.log("打开窗口请求前")
         const resp = await request.get(this.open_url, { json: true });
+        console.log("打开窗口请求")
         const chrome_driver = resp.data.webdriver;
         const debuggerAddress = resp.data.ws.selenium;
         
